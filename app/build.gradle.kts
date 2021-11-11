@@ -25,17 +25,8 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
 
-    lintOptions {
+    lint {
         isWarningsAsErrors = true
         isAbortOnError = true
     }
@@ -57,7 +48,6 @@ android {
 dependencies {
     implementation(kotlin("stdlib-jdk7"))
 
-    implementation(project(":library-android"))
     implementation(project(":library-kotlin"))
 
     implementation(SupportLibs.ANDROIDX_APPCOMPAT)
