@@ -12,6 +12,7 @@ object Versions {
     const val CORE_KTX = "1.6.0"
     const val ESPRESSO_CORE = "3.4.0"
     const val JUNIT = "4.13.2"
+    const val ROBOLECTRIC = "4.6.1"
     const val KTLINT = "0.42.0"
 }
 
@@ -29,6 +30,7 @@ object SupportLibs {
 
 object TestingLib {
     const val JUNIT = "junit:junit:${Versions.JUNIT}"
+    const val ROBOLECTRIC = "org.robolectric:robolectric${Versions.ROBOLECTRIC}"
 }
 
 object AndroidTestingLib {

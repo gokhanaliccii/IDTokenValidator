@@ -48,7 +48,7 @@ android {
 dependencies {
     implementation(kotlin("stdlib-jdk7"))
 
-    implementation(project(":library-kotlin"))
+    implementation(project(":library-android"))
 
     implementation(SupportLibs.ANDROIDX_APPCOMPAT)
     implementation(SupportLibs.ANDROIDX_CONSTRAINT_LAYOUT)
