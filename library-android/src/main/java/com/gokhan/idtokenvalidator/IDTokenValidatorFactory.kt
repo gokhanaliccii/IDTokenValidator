@@ -5,5 +5,5 @@ import com.gokhan.idtokenvalidator.internal.token.JwtTokenFormatValidator
 
 object IDTokenValidatorFactory {
 
-    val client: IDTokenValidator = IDTokenValidatorImpl(JwtTokenFormatValidator())
+    val idTokenValidator: IDTokenValidator = IDTokenValidatorImpl(JwtTokenFormatValidator())
 }
