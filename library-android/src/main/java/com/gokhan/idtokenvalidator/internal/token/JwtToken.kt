@@ -47,18 +47,8 @@ internal class JwtToken(rawToken : String) {
         }
     }
 
-    private fun splitToken(token: String): Array<String> {
-        var parts = token.split(TOKEN_PART_DELIMITER).toTypedArray()
-        if (parts.size != EXPECTED_PARTS) {
-            throw IllegalArgumentException(
-                String.format(
-                    "The token was expected to have 3 parts, but got %s.",
-                    parts.size
-                )
-            )
-        }
-        return parts
-    }
+    private fun splitToken(token: String): Array<String> =
+        token.split(TOKEN_PART_DELIMITER).toTypedArray()
 
     private fun String.decodeBase64(): String {
         val bytes: ByteArray =
