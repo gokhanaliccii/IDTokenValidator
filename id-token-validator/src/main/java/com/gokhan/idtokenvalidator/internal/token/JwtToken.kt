@@ -1,5 +1,6 @@
 package com.gokhan.idtokenvalidator.internal.token
 
+import android.icu.util.UniversalTimeScale.toLong
 import android.util.Base64
 import com.gokhan.idtokenvalidator.internal.util.toJsonObject
 import com.gokhan.idtokenvalidator.internal.util.toMap
@@ -35,11 +36,11 @@ internal class JwtToken(rawToken : String) {
         issuer = decodedPayload["iss"] as String?
         nonce = decodedPayload["nonce"] as String?
         organizationId = decodedPayload["org_id"] as String?
-        issuedAt = (decodedPayload["iat"] as? Double)?.let { Date(it.toLong() * 1000) }
-        expiresAt = (decodedPayload["exp"] as? Double)?.let { Date(it.toLong() * 1000) }
+        issuedAt = (decodedPayload["iat"] as? Double)?.let { seconds -> seconds.secondsToDate() }
+        expiresAt = (decodedPayload["exp"] as? Double)?.let { seconds -> seconds.secondsToDate() }
         authorizedParty = decodedPayload["azp"] as String?
         authenticationTime =
-            (decodedPayload["auth_time"] as? Double)?.let { Date(it.toLong() * 1000) }
+            (decodedPayload["auth_time"] as? Double)?.let { seconds -> seconds.secondsToDate() }
         audience = when (val aud = decodedPayload["aud"]) {
             is String -> listOf(aud)
             is List<*> -> aud as List<String>
@@ -56,9 +57,13 @@ internal class JwtToken(rawToken : String) {
         return String(bytes, Charsets.UTF_8)
     }
 
+    private inline fun Double.secondsToDate(): Date {
+        return Date(this.toLong() * ONE_SECOND_IN_MILLIS)
+    }
+
     private companion object {
-        const val EXPECTED_PARTS =3
         const val TOKEN_PART_DELIMITER = "."
         const val PAYLOAD_INDEX = 1
+        const val ONE_SECOND_IN_MILLIS = 1000
     }
 }

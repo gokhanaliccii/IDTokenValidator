@@ -8,8 +8,6 @@ sealed class Result {
 
         data class MissingPropertyInToken(val message : String) : INVALID()
 
-        data class MisMatchedProperty(val message : String) : INVALID()
-
-        object EXPIRED_TOKEN : INVALID()
+        data class MismatchedProperty(val message: String) : INVALID()
     }
 }
