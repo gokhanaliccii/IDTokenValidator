@@ -1,4 +1,4 @@
-version = LibraryAndroidCoordinates.LIBRARY_VERSION
+version = LIBRARY_VERSION
 
 plugins {
     id("com.android.library")
@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Sdk.COMPILE_SDK_VERSION)
+    compileSdkVersion(COMPILE_SDK_VERSION)
 
     defaultConfig {
-        minSdkVersion(Sdk.MIN_SDK_VERSION)
-        targetSdkVersion(Sdk.TARGET_SDK_VERSION)
+        minSdkVersion(MIN_SDK_VERSION)
+        targetSdkVersion(TARGET_SDK_VERSION)
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -39,8 +39,7 @@ dependencies {
     implementation(SupportLibs.ANDROIDX_CORE_KTX)
 
     testImplementation(TestingLib.JUNIT)
-
-    testImplementation("org.robolectric:robolectric:4.6.1")
+    testImplementation(TestingLib.ROBOLECTRIC)
 
     androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_RUNNER)
     androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_EXT_JUNIT)
