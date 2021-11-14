@@ -52,7 +52,7 @@ if the token is validated result will be `Result.VALID` otherwise it will `Resul
 
 * **MalformedRawToken**: given jwt token is not valid
 * **MissingPropertyInToken** : one of the [required field](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) is missing
-* **MisMatchedProperty**: given token's properties not matches with request params (issuer, clientId)
+* **MismatchedProperty**: given token's properties not matches with request params (issuer, clientId)
 
 
 ## Contributing  
