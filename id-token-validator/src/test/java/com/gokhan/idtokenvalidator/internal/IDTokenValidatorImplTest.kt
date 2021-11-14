@@ -10,7 +10,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
-@Config(manifest= Config.NONE)
+@Config(manifest = Config.NONE)
 @RunWith(RobolectricTestRunner::class)
 class IDTokenValidatorImplTest {
 
@@ -32,8 +32,8 @@ class IDTokenValidatorImplTest {
     fun `if given token's iss property not exist, result should be MissingPropertyInToken`() {
         val givenToken =
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
-                    "eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ." +
-                    "SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+                "eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ." +
+                "SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
         val issuer = "issuer"
         val clientId = "clientId"
 
@@ -47,8 +47,8 @@ class IDTokenValidatorImplTest {
     fun `if given token's iss field not matches with issuer, result should be MissingPropertyInToken`() {
         val givenToken =
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
-                    "eyJpc3MiOiJ0ZXN0Iiwic3ViIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMn0." +
-                    "jiHexPW_MaO4O-lWRqqTlc_qhELWfJ-yzoALLmyavTY"
+                "eyJpc3MiOiJ0ZXN0Iiwic3ViIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMn0." +
+                "jiHexPW_MaO4O-lWRqqTlc_qhELWfJ-yzoALLmyavTY"
         val issuer = "issuer"
         val clientId = "clientId"
 
