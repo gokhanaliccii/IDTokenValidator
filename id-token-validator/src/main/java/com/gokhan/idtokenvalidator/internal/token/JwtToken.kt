@@ -1,6 +1,5 @@
 package com.gokhan.idtokenvalidator.internal.token
 
-import android.icu.util.UniversalTimeScale.toLong
 import android.util.Base64
 import com.gokhan.idtokenvalidator.internal.util.toJsonObject
 import com.gokhan.idtokenvalidator.internal.util.toMap
@@ -10,7 +9,7 @@ import java.util.Date
  *  Inspired from
  *  https://github.com/auth0/Auth0.Android/blob/main/auth0/src/main/java/com/auth0/android/request/internal/Jwt.kt
  */
-internal class JwtToken(rawToken : String) {
+internal class JwtToken(rawToken: String) {
 
     private val decodedPayload: Map<String, Any?>
     private val parts: Array<String>
@@ -57,7 +56,7 @@ internal class JwtToken(rawToken : String) {
         return String(bytes, Charsets.UTF_8)
     }
 
-    private inline fun Double.secondsToDate(): Date {
+    private fun Double.secondsToDate(): Date {
         return Date(this.toLong() * ONE_SECOND_IN_MILLIS)
     }
 
