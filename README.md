@@ -1,7 +1,7 @@
 
 # ID Token Validator  
   
-A lightweight [ID Token](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) validator library  for Android 
+A lightweight [ID Token](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) validator library  for Android
 
   
 ## Using IDTokenValidator in your project
@@ -53,8 +53,6 @@ if the token is validated result will be `Result.VALID` otherwise it will `Resul
 * **MalformedRawToken**: given jwt token is not valid
 * **MissingPropertyInToken** : one of the [required field](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) is missing
 * **MisMatchedProperty**: given token's properties not matches with request params (issuer, clientId)
-* **EXPIRED_TOKEN**: given token is expired
-
 
 
 ## Contributing  
