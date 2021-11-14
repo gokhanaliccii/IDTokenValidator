@@ -1,0 +1,3 @@
+-keep, includedescriptorclasses class com.gokhan.idtokenvalidator.IDTokenValidator { *; }
+-keep, includedescriptorclasses class com.gokhan.idtokenvalidator.IDTokenValidatorFactory { *; }
+-keep, includedescriptorclasses class com.gokhan.idtokenvalidator.Result { *; }
