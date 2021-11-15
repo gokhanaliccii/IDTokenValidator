@@ -28,7 +28,7 @@ android {
 This library is not public available yet so you need to download this repository into your project's folder and add **library-android**  module as project dependency
 
 ```
-implementation(project(":library-android"))
+api(project(":library-android"))
 ```
   
 #### ID Token Validation
